@@ -20,4 +20,4 @@ A continuación, se les presentará el modelado previo realizado en StarUML
 
 
 
-⌨️ con ❤️ por [Vane789] y [TATIANA2024]
+⌨️ con ❤️ por [Vane789](https://github.com/Vane789)  y [TATIANA2024]](https://github.com/TATIANA2024) 
