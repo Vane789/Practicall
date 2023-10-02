@@ -1,0 +1,30 @@
+Al laboratorio clínico Konoha SAS, le interesa registrar los exámenes de laboratorio que realiza a los pacientes.
+Los pacientes pueden pertenecer a alguna entidad de salud que le cubre los exámenes o ser particulares. En todos
+los casos de los pacientes interesa saber número y tipo de identificación, nombres y apellidos, fecha de nacimiento,
+POS (Básico, PAC, Prepagado, entre otros), teléfonos de contacto, celular, correo electrónico, nombre de otra
+persona para contacto y teléfono de contacto.
+Cuando llega un paciente solicitando la realización de exámenes, si no está registrado se le piden todos los datos y
+se registra en el sistema, y con la orden que mandó el médico se registran los exámenes. Se debe crear una orden
+en el sistema, esta orden debe tener un consecutivo, fecha de solicitud, fecha de ingreso en el sistema, médico
+tratante y número de la orden que entregó el médico. Y se prosigue a ingresar los exámenes que pidió el médico:
+tipo de examen, fecha cita, fecha de realización y observaciones; los exámenes pueden ser uno o varios.
+Del médico se maneja la siguiente información: cédula, nombres y apellidos, teléfonos de contacto, dirección,
+especialidad.
+Sólo para los pacientes particulares se debe crear una factura por cada orden de exámenes que realice, debe tener
+número de la factura, valor a pagar, la información del paciente (cédula, nombre completo, dirección, teléfono), fecha
+de realización. Cada tipo de examen tiene un valor distinto, por ejemplo, el valor de un examen de triglicéridos es
+de 15.000, un hemograma sencillo de 10.000, etc.
+A fin de mes, se debe generar una factura, relacionada con las diferentes órdenes de la entidad prestadora que va
+a pagar los exámenes. Es posible consultar por número de factura, el encabezado de la factura con el detalle de los
+exámenes que se realizaron (tipo de examen, número de orden, cédula del paciente) y el valor total de la factura.
+A fin de mes interesa conocer el médico tratante que más pacientes remitió. Un consolidado de ingresos por tipo
+de paciente (particular o por entidad de salud), ordenados de mayor a menor. También se requiere tener información
+de un paciente en particular (por número de cédula), qué exámenes se realizó con fecha de realización.
+De las entidades prestadoras de salud, se desea conocer NIT, teléfonos de contacto, celular, correo electrónico,
+nombre de otra persona para contacto y teléfono de contacto y tipo de entidad prestadora (Régimen Contributivo,
+Prepagada, Régimen Subsidiado).
+Cree un programa en Python que:
+Usando POO cree la estructura necesaria para las entidades (Atributos y Funciones). Tenga presente la herencia,
+el encapsulamiento, el polimorfismo y la abstracción.
+Luego de creada la estructura de las entidades haga funcionales al menos 4 funciones. Cuando se ejecute el
+programa debe hacer algo acorde a lo que se tiene en el contexto del problema
