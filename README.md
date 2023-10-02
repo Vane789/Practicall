@@ -1,5 +1,6 @@
 # Practicall
 
+## Integrantes
 
-#Integrantes: Anlly Vanessa Cardona
-              Tatiana Marcela Cartagena
+* **Anlly Vanessa Cardona** 
+* **Tatiana Marcela Cartagena**
