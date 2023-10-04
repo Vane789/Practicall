@@ -1,36 +1,39 @@
-class examen():
-    def __init__(self, id, tipoExamen, fechaCita, fechaRealizacion, Observaciones):
-        self._id = id
-        self._tipoExamen = tipoExamen
-        self._fechaCita = fechaCita
-        self._fechaRealizacion = fechaRealizacion
-        self._Observaciones = Observaciones
+class Examen:
+    def __init__(self, tipo_de_examen, fecha_cita, fecha_realizacion_examen, observacion, valor):
+        self._tipo_de_examen = tipo_de_examen
+        self._fecha_cita = fecha_cita
+        self._fecha_realizacion_examen = fecha_realizacion_examen
+        self._observacion = observacion
+        self._valor = valor
 
-    def get_id(self):
-        return self._id
-    def set_id(self, id):
-        self._id = id
+    def get_tipo_de_examen(self):
+        return self._tipo_de_examen
 
-    def get_tipoExamen(self):
-        return self._tipoExamen
-    def set_tipoExamen(self, tipoExamen):
-        self._tipoExamen = tipoExamen
+    def set_tipo_de_examen(self, tipo_de_examen):
+        self._tipo_de_examen = tipo_de_examen
 
-    def get_fechaCita(self):
-        return self._fechaCita
-    def set_fechaCita(self, fechaCita):
-        self._fechaCita = fechaCita
+    def get_fecha_cita(self):
+        return self._fecha_cita
 
-    def get_fechaRealizacion(self):
-        return self._fechaRealizacion
+    def set_fecha_cita(self, fecha_cita):
+        self._fecha_cita = fecha_cita
 
-    def set_fechaRealizacion(self, fechaRealizacion):
-        self._fechaRealizacion= fechaRealizacion
+    @property
+    def fecha_realizacion_examen(self):
+        return self._fecha_realizacion_examen
 
-    def get_Observaciones(self):
-        return self._Observaciones
+    @fecha_realizacion_examen.setter
+    def fecha_realizacion_examen(self, valor):
+        self._fecha_realizacion_examen = valor 
 
-    def set_Observaciones(self, Observaciones):
-        self._Observaciones= Observaciones
+    def get_observacion(self):
+        return self._observacion
 
+    def set_observacion(self, observacion):
+        self._observacion = observacion
 
+    def get_valor(self):
+        return self._valor
+
+    def set_valor(self, valor):
+        self._valor = valor
