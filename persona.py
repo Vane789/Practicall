@@ -1,3 +1,5 @@
+#Abstracción se aplica creando Persona  creación de una clase base o genérica que contiene atributos 
+# y métodos comunes que se comparten entre varias clases derivadas o subclases. 
 class Persona ():
         def __init__(self,tipo_identificacion, numero_identificacion, nombre, apellido,fecha_de_nacimiento, celular, telefonos, nombre_contacto, telefono_contacto):
         
