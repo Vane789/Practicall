@@ -25,11 +25,15 @@ def set_paciente(self, paciente):
 def get_paciente(self):
     return self._paciente
 
-def set_fecha_realizacion(self, fecha_realizacion):
-    self._fecha_realizacion = fecha_realizacion
+@property
+def fecha_realizacion_factura(self):
+    # Lógica para obtener la fecha de realización específica de la factura
+    return self._fecha_realizacion_factura
 
-def get_fecha_realizacion(self):
-    return self._fecha_realizacion
+@fecha_realizacion_factura.setter
+def fecha_realizacion_factura(self, valor):
+    # Lógica para validar o transformar la fecha de realización de la factura
+    self._fecha_realizacion_factura = valor
 
 #Funciones
 

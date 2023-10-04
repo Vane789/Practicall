@@ -1,8 +1,8 @@
 from persona import Persona
 
 class Paciente(Persona):
-    def __init__(self, id, tipo_identificacion, numero_identificacion, nombre, apellido,fecha_de_nacimiento, celular, telefonos, nombre_contacto, telefono_contacto, pos, tipo_paciente):
-        super().__init__(id, tipo_identificacion, numero_identificacion, nombre, apellido,fecha_de_nacimiento, celular, telefonos, nombre_contacto, telefono_contacto)
+    def __init__(self, tipo_identificacion, numero_identificacion, nombre, apellido,fecha_de_nacimiento, celular, telefonos, nombre_contacto, telefono_contacto, pos, tipo_paciente):
+        super().__init__(tipo_identificacion, numero_identificacion, nombre, apellido,fecha_de_nacimiento, celular, telefonos, nombre_contacto, telefono_contacto)
         self._pos = pos
         self._tipo_paciente = tipo_paciente
         self._ordenes_examenes = []

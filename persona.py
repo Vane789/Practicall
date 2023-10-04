@@ -1,8 +1,6 @@
 class Persona():
-    def __init__(self, id, tipo_identificacion, numero_identificacion, nombre, apellido,fecha_de_nacimiento, celular, telefonos, nombre_contacto, telefono_contacto):
+    def __init__(self,tipo_identificacion, numero_identificacion, nombre, apellido,fecha_de_nacimiento, celular, telefonos, nombre_contacto, telefono_contacto):
         
-        self._id = id
-        self._nombre = nombre
         self._tipo_identificacion = tipo_identificacion
         self._numero_identificacion = numero_identificacion
         self._nombre = nombre
@@ -15,11 +13,6 @@ class Persona():
 
 
 # Gets   
-def get_id(self):
-        return self._id
-
-def get_nombre(self):
-        return self._nombre
 
 def get_tipo_identificacion(self):
         return self._tipo_identificacion
@@ -49,12 +42,6 @@ def get_telefono_contacto(self):
         return self._telefono_contacto
 
 #Sets
-
-def set_id(self, id):
-        self._id = id
-
-def set_nombre(self, nombre):
-        self._nombre = nombre
 
 def set_tipo_identificacion(self, tipo_identificacion):
         self._tipo_identificacion = tipo_identificacion
