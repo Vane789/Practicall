@@ -2,9 +2,9 @@ from persona import Persona
 
 
 class Medico(Persona):
-    # cedula, nombres, apellidos, telefonoContacto,
-    def __init__(self, cedula, nombres, apellidos, telefonoContacto, especialidad, direccion):
-        super().__init__(cedula, nombres, apellidos, telefonoContacto)
+    # cedula, nombres, apellidos, telefono_contacto,
+    def __init__(self, tipo_identificacion, numero_identificacion, nombre, apellido, celular, telefonos, especialidad, direccion):
+        super().__init__(tipo_identificacion, numero_identificacion, nombre, apellido, celular, telefonos)
         self._especialidad = especialidad
         self._direccion = direccion
 

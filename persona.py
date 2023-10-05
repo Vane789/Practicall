@@ -1,19 +1,14 @@
 #Abstracción se aplica creando Persona  creación de una clase base o genérica que contiene atributos 
 # y métodos comunes que se comparten entre varias clases derivadas o subclases. 
 class Persona ():
-        def __init__(self,tipo_identificacion, numero_identificacion, nombre, apellido,fecha_de_nacimiento, celular, telefonos, correo, nombre_contacto, telefono_contacto):
+        def __init__(self,tipo_identificacion, numero_identificacion, nombre, apellido, celular, telefonos):
         
                 self._tipo_identificacion = tipo_identificacion
                 self._numero_identificacion = numero_identificacion
                 self._nombre = nombre
                 self._apellido = apellido
-                self._fecha_de_nacimiento = fecha_de_nacimiento
                 self._celular = celular
                 self._telefonos = telefonos
-                self._correo = correo
-                self._nombre_contacto = nombre_contacto
-                self._telefono_contacto = telefono_contacto
-
 
         # Gets   
 
@@ -29,23 +24,12 @@ class Persona ():
         def get_apellido(self):
                 return self._apellido
 
-        def get_fecha_de_nacimiento(self):
-                return self._fecha_de_nacimiento
-
         def get_celular(self):
                 return self._celular
 
         def get_telefonos(self):
                 return self._telefonos
         
-        def get_correo(self):
-                return self._correo
-
-        def get_nombre_contacto(self):
-                return self._nombre_contacto
-
-        def get_telefono_contacto(self):
-                return self._telefono_contacto
 
         #Sets
 
@@ -61,21 +45,9 @@ class Persona ():
         def set_apellido(self, apellido):
                 self._apellido = apellido
 
-        def set_fecha_de_nacimiento(self, fecha_de_nacimiento):
-                self._fecha_de_nacimiento = fecha_de_nacimiento
-
         def set_celular(self, celular):
                 self._celular = celular
 
         def set_telefonos(self, telefonos):
                 self._telefonos = telefonos
-                
-        def set_correo(self, correo):   
-                self._correo = correo
-
-        def set_nombre_contacto(self, nombre_contacto):
-                self._nombre_contacto = nombre_contacto
-
-        def set_telefono_contacto(self, telefono_contacto):
-                self._telefono_contacto = telefono_contacto
 
