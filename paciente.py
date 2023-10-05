@@ -11,6 +11,7 @@ class Paciente(Persona):
         fecha_de_nacimiento,
         celular,
         telefonos,
+        correo,
         nombre_contacto,
         telefono_contacto,
         pos,
@@ -24,8 +25,9 @@ class Paciente(Persona):
             fecha_de_nacimiento,
             celular,
             telefonos,
+            correo,
             nombre_contacto,
-            telefono_contacto,
+            telefono_contacto
         )
         self._pos = pos
         self._tipo_paciente = tipo_paciente
