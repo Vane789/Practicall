@@ -4,7 +4,7 @@ from persona import Persona
 class Medico(Persona):
     # cedula, nombres, apellidos, telefonoContacto,
     def __init__(self, cedula, nombres, apellidos, telefonoContacto, especialidad, direccion):
-        super().__init__(cedula, nombres, apellidos, telefonoContacto, especialidad, direccion)
+        super().__init__(cedula, nombres, apellidos, telefonoContacto)
         self._especialidad = especialidad
         self._direccion = direccion
 

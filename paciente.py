@@ -59,7 +59,3 @@ class Paciente(Persona):
 
     # Funciones
 
-
-    def registrar_paciente(identificacion,nombres,apellidos,fecha_nacimiento,telefonos,celular,correo,nombre_contacto,telefono_contacto,pos,tipo_paciente):
-        paciente = Paciente(identificacion,nombres,apellidos,fecha_nacimiento,telefonos,celular,correo,nombre_contacto,telefono_contacto,pos,tipo_paciente,
-        )
