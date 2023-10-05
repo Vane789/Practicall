@@ -1,20 +1,19 @@
 from persona import Persona
 from medico import Medico
-from paciente import Paciente
+from Modelos.paciente import Paciente
 from orden import Orden
 from examen import Examen
+from Metodos.pacientes import *
 
-pacientes = []
-medicos = []
+
 
 def main():
     while True:
         print(f"""
         --- Bienvenido al sistema de gestión de laboratorio clínico Konoha SAS ---\n
-            1. Registrar paciente \n
+            1. Registrar exámenes \n
             2. Registrar médico \n
             3. Registrar orden \n
-            4. Registrar examen \n
             5. Generar factura \n
             6. Salir
             """)
@@ -23,7 +22,7 @@ def main():
 
         if opcion == "1":
             pass
-            # registrar_paciente()
+            registrar_examen()
         elif opcion == "2":
             pass
             # registrar_medico()
@@ -46,3 +45,4 @@ def main():
 
 if __name__ == "__main__":
     pass
+    main()

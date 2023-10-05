@@ -77,6 +77,3 @@ class Paciente(Persona):
     def get_ordenes_examenes(self):
         return self._ordenes_examenes
 
-
-    # Funciones
-
