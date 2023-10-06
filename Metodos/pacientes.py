@@ -16,7 +16,12 @@ def validar_paciente():
         #print("Flujo para registrar un paciente")
         registrar_paciente(cedula)
         
-def registrar_paciente(cedula):  
+def registrar_paciente(cedula):
+    print("""
+        -------------------------------------------------------
+                        [ REGISTRAR PACIENTE ]
+        -------------------------------------------------------
+        """)
     tipo_identificacion = input("Tipo de identificación (CC, TI): ")
     nombre = input("Nombres: ")
     apellido = input("Apellidos: ")
