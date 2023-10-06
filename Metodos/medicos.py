@@ -28,8 +28,6 @@ def crear_orden(consecutivo, medico):
 
 
 
-
-
 def registrar_medico(cedula):
     tipo_identificacion = input("Tipo de identificación (CC, CE): ")
     nombre = input("Nombres: ")
