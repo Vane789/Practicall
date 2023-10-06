@@ -1,9 +1,5 @@
-from persona import Persona
-from medico import Medico
-from Modelos.paciente import Paciente
-from orden import Orden
-from examen import Examen
 from Metodos.pacientes import *
+from Metodos.medicos import *
 
 
 
@@ -25,10 +21,10 @@ def main():
             registrar_examen()
         elif opcion == "2":
             pass
-            # registrar_medico()
+            registrar_medico(123456)
         elif opcion == "3":
             pass
-            # registrar_orden()
+            crear_orden(1, "julian")
         elif opcion == "4":
             pass
             # registrar_examen()

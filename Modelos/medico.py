@@ -19,3 +19,5 @@ class Medico(Persona):
 
     def set_direccion(self, direccion):
         self._direccion = direccion
+
+
