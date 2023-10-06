@@ -18,11 +18,9 @@ class Examen:
     def set_fecha_cita(self, fecha_cita):
         self._fecha_cita = fecha_cita
 
-    @property
     def fecha_realizacion_examen(self):
         return self._fecha_realizacion_examen
 
-    @fecha_realizacion_examen.setter
     def fecha_realizacion_examen(self, valor):
         self._fecha_realizacion_examen = valor 
 

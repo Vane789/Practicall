@@ -1,36 +1,25 @@
 from Modelos.medico import Medico
 from laboratorio import laboratorio
 from Metodos.medicos import *
-import datetime
+from Metodos.ordenes import *
 
-
-Ordenes = []
-consecutivo = 1
-
-def crear_orden(consecutivo, medico):
-    paciente = input("Ingrese el nombre del paciente: ")
-    numero_orden_medico = input("Ingrese el número de orden del médico: ")
-
-    nueva_orden = {
-        "consecutivo": consecutivo,
-        "paciente": paciente,
-        "medico": medico,
-        "fecha_solicitud": datetime.date.today(),
-        "fecha_ingreso": datetime.date.today(),
-        "numero_orden_medico": numero_orden_medico,
-    }
-
-    Ordenes.append(nueva_orden)
-
-    print(f"Datos de la orden{nueva_orden} ")
-    print(f"Orden Creada y agregada a la lista de órdenes")
-
-
-
-
-
-
+def validar_medico():
+        cedula = input("Cúal es tu cédula: ")
+        validar_medico = validar(cedula)
+        if validar_medico:
+            print(f"El medico ya existe con cedula: {cedula}")
+        else:
+            print("El medico no existe")
+            
+            #print("Flujo para registrar un medico")
+            registrar_medico(cedula)
+        
 def registrar_medico(cedula):
+    print("""
+        -------------------------------------------------------
+                        [ REGISTRAR MEDICO ]
+        -------------------------------------------------------
+        """)
     tipo_identificacion = input("Tipo de identificación (CC, CE): ")
     nombre = input("Nombres: ")
     apellido = input("Apellidos: ")
@@ -43,4 +32,13 @@ def registrar_medico(cedula):
     print("Medico agregado con éxito")
 
 
+
+def validar(id):
+    for x in laboratorio.medicos:
+        if x.get_numero_identificacion() == id:
+            return {
+                "respuesta": True,
+                "nombre": x.get_nombre()
+            }
+    return False
 

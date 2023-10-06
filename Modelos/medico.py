@@ -1,4 +1,4 @@
-from persona import Persona
+from Modelos.persona import Persona
 
 
 class Medico(Persona):

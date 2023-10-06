@@ -32,17 +32,8 @@ class Factura:
     def get_paciente(self):
         return self._paciente
 
-
-    @property
     def fecha_realizacion_factura(self):
-        # Lógica para obtener la fecha de realización específica de la factura
         return self._fecha_realizacion_factura
 
-
-    @fecha_realizacion_factura.setter
     def fecha_realizacion_factura(self, valor):
-        # Lógica para validar o transformar la fecha de realización de la factura
         self._fecha_realizacion_factura = valor
-
-
-# Funciones

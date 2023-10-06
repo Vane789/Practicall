@@ -1,7 +1,8 @@
 from Metodos.pacientes import *
 from Metodos.medicos import *
 
-
+medico1 = Medico("CC", "123", "Alias Tati", "Cartagena", "23224334", "34355", "Ginecologa", "Carrera45#354")
+laboratorio.medicos.append(medico1)
 
 def main():
     while True:
@@ -17,14 +18,12 @@ def main():
         opcion = input("Seleccione una opción (1-7): ")
 
         if opcion == "1":
-            pass
-            registrar_examen()
+            validar_paciente()
         elif opcion == "2":
-            pass
-            registrar_medico(123456)
+            validar_medico()
         elif opcion == "3":
             pass
-            crear_orden(1, "julian")
+            crear_orden()
         elif opcion == "4":
             pass
             # registrar_examen()
