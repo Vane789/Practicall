@@ -13,11 +13,8 @@ class Medico(Persona):
     def set_especialidad(self, especialidad):
         self._especialidad = especialidad
 
-    def get_direccion(self):
-        return self._direccion
-
-    def set_direccion(self, direccion):
-        self._direccion = direccion
-
-
-    
+    def validar(id, medicos):
+        for x in medicos:
+            if x.get_numero_identificacion() == id:
+                return {"respuesta": True, "nombre": x.get_nombre()}
+        return False

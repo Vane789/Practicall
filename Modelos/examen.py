@@ -8,6 +8,13 @@ class Examen:
 
     def get_tipo_de_examen(self):
         return self._tipo_de_examen
+    
+    def mostrar_datos(self):
+        print(f"Tipo examen: {self._tipo_de_examen}")
+        print(f"Fecha cita: {self._fecha_cita}")
+        print(f"Fecha realización del examen: {self._fecha_realizacion_examen}")
+        print(f"Observaciones: {self._observacion}")
+        print(f"Valor: {self._valor}")
 
     def set_tipo_de_examen(self, tipo_de_examen):
         self._tipo_de_examen = tipo_de_examen
@@ -35,3 +42,7 @@ class Examen:
 
     def set_valor(self, valor):
         self._valor = valor
+        
+    def __str__(self):
+        examenes = f"Tipo de Examen: {self._tipo_de_examen}, Fecha de la cita: {self._fecha_cita}, Fecha realización examen: {self._fecha_realizacion_examen}, Observaciones: {self._observacion}, Valor: {self._valor}"
+        return examenes

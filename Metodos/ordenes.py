@@ -1,12 +1,12 @@
 from laboratorio import laboratorio
 from datetime import datetime
 from Metodos.examenes import *
+from Modelos.orden import Orden
 
-def crear_orden():
-    paciente = input("Ingrese el nombre del paciente: ")
+def crear_orden(ordenes, examenes):
     print("""Lista de médicos""")
     for medico in laboratorio.medicos:
-        print(f"Nombre: {medico.get_nombre()} Cedula: {medico.get_numero_identificacion()}")
+        print(f"Nombre: {medico.get_nombre()} Cédula: {medico.get_numero_identificacion()}")
     cedula_medico = input("Ingrese la cédula del médico: ")
     encontrado = False
     nombre_medico = ""
@@ -16,22 +16,23 @@ def crear_orden():
             encontrado = True
             break
     if encontrado:
-        numero_orden_medico = input("Ingrese el número de orden del médico: ")
-        if numero_orden_medico not in [orden["numero_orden_medico"] for orden in laboratorio.ordenes]:
+        numero_orden_medico = input("Ingrese el número de orden del médico: ")                
+        if numero_orden_medico not in [orden.get_numero_orden() for orden in ordenes]:
             date = datetime.now()
             format_date = date.strftime("%Y-%m-%d %H:%M:%S")
-            nueva_orden = {
-                "consecutivo": len(laboratorio.ordenes)+1,  
-                "paciente": paciente,
-                "medico": nombre_medico,
-                "fecha_solicitud": format_date,
-                "fecha_ingreso": format_date,
-                "numero_orden_medico": numero_orden_medico,
-            }
-            laboratorio.ordenes.append(nueva_orden)
-            print(f"Datos de la orden{nueva_orden} ")
-            print(f"Orden creada y agregada a la lista de órdenes")
-            crear_examenes()
+            nueva_orden = Orden(
+                len(ordenes)+1,
+                nombre_medico,
+                format_date,
+                format_date,
+                numero_orden_medico,
+            )   
+            ordenes.append(nueva_orden)
+            print("---" * 20)
+            print("Orden creada con los siguientes datos:")
+            ordenes[len(ordenes) -1].mostrar_datos()
+            print("---" * 20)
+            crear_examenes(examenes)
         else: 
             print("El número de orden ya existe, debe tener una orden única")
     else:

@@ -3,8 +3,8 @@ from laboratorio import laboratorio
 from Metodos.medicos import *
 from Metodos.ordenes import *
 
-def validar_informacion(cedula):
-        cedula = input("Cúal es tu cédula: ")
+def crear_medico():
+        cedula = input("Cédula del nuevo medico: ")
         validar_medico = validar(cedula)
         if validar_medico:
             print(f"El medico ya existe con cedula: {cedula}")

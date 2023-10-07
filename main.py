@@ -1,12 +1,14 @@
 from Metodos.pacientes import *
-from Metodos.medicos import *
 from Metodos.examenes import *
 from Metodos.ordenes import *
+from Metodos.medicos import *
 
 # Datos medicos
-medico1 = Medico("CC", "123", "Alias Tati", "Cartagena", "23224334", "34355", "Ginecologa", "Carrera55#354")
-medico2 = Medico("CC", "234", "Alias Andres", "Sernita", "45325", "34", "Neurologo", "Carrera45#354")
-medico3 = Medico("CC", "456", "Alias Vanessa", "Cardona", "7675", "3433255", "Optamologa", "Carrer56#354")
+medico1 = Medico("CC", "123", "Tati", "Cartagena", "23224334", "34355", "Ginecologa", "Carrera55#354")
+medico2 = Medico("CC", "234", "Andres", "Sernita", "45325", "34", "Neurologo", "Carrera45#354")
+medico3 = Medico("CC", "456", "Vanessa", "Cardona", "7675", "3433255", "Optamologa", "Carrer56#354")
+
+
 laboratorio.medicos.append(medico1)
 laboratorio.medicos.append(medico2)
 laboratorio.medicos.append(medico3)
@@ -20,33 +22,29 @@ laboratorio.examenes.append(examen1)
 laboratorio.examenes.append(examen2)
 laboratorio.examenes.append(examen3)
 
-
 def main():
     while True:
         print(f"""
         --- Bienvenido al sistema de gestión de laboratorio clínico Konoha SAS ---\n
-            1. Registrar orden \n
-            2. Registrar examenes \n
-            3. Registrar medico \n
-            5. Generar factura \n
-            6. Salir
+            1. Registrar orden y examen \n
+            2. Registrar medico \n
+            3. Ver todos los paciente \n
+            4. Ver las ordenes de un paciente \n
+            5. Salir
             """)
 
         opcion = input("Seleccione una opción (1-7): ")
 
         if opcion == "1":
-            crear_orden()
+            validar_informacion()
         elif opcion == "2":
-            Paciente.validar_informacion()
+            crear_medico()
         elif opcion == "3":
-            Medico.validar_informacion()
+            ver_todos_pacientes()
         elif opcion == "4":
             pass
-            # registrar_examen()
+            ver_ordenes_paciente()    
         elif opcion == "5":
-            pass
-            # generar_factura()
-        elif opcion == "6":
             pass
             print("¡Hasta luego!")
             break

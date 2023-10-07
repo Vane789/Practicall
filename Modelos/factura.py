@@ -8,7 +8,6 @@ class Factura:
 
 # Gets y sets
 
-
     def set_numero_factura(self, numero_factura):
         self._numero_factura = numero_factura
 

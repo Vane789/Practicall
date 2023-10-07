@@ -1,37 +1,44 @@
 from laboratorio import laboratorio
 from Modelos.examen import Examen
 from datetime import datetime
+from Modelos.paciente import Paciente
 
-def crear_examenes():
+def crear_examenes(examenes):
     print("""
         -------------------------------------------------------
                         [ REGISTRAR EXAMENES ]
         -------------------------------------------------------
         """)
+        
+    cantidad_examenes = int(input("Cantidad de exámenes que requiere el paciente: "))
     print("""Lista de examenes""")
     for examen in laboratorio.examenes:
         print(f"Tipo de examen: {examen.get_tipo_de_examen()} Valor: {examen.get_valor()}")
-    tipo_examen = input("Ingrese el tipo de examen requerido: ")
-    encontrado = False
-    valor = ""
-    for examen in laboratorio.examenes:
-        if tipo_examen == examen.get_tipo_de_examen():
-            valor = examen.get_valor()
-            encontrado = True
-            break
-    if encontrado:
+        
+    for i in range(cantidad_examenes):
+        tipo_examen = input(f"\nExamen {i + 1}: ")
+        encontrado = False
+        valor = ""
+        
         fecha_cita = input("Ingrese la fecha de la cita: ")
         fecha_realizacion_examen = input("Ingrese la fecha de realización del examen: ")
         observacion = input("Ingrese la observacion: ")
-        nuevo_examen = {
-            "tipo_examen": tipo_examen,
-            "fecha_cita": fecha_cita,
-            "fecha_realizacion_examen": fecha_realizacion_examen,
-            "observacion": observacion,
-            "valor": valor,
-        }
-        laboratorio.examenes.append(nuevo_examen)
-        print(f"Datos del examen{nuevo_examen} ")
-        print(f"Examen creado y agregada a la lista de examenes")
-    else: 
-        print("No existe el examen")
+        
+        for examen in laboratorio.examenes:
+            if tipo_examen == examen.get_tipo_de_examen():
+                valor = examen.get_valor()
+                encontrado = True
+                break
+
+        nuevo_examen = Examen(
+           tipo_examen,
+           fecha_cita,
+           fecha_realizacion_examen,
+           observacion,
+            valor,
+        )
+        examenes.append(nuevo_examen)
+        print("---" * 20)
+        print("Examen guardado con los siguientes datos:")
+        examenes[i].mostrar_datos()
+        print("---" * 20)

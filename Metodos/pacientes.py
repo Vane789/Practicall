@@ -3,19 +3,22 @@ from laboratorio import laboratorio
 from Metodos.medicos import *
 from Metodos.ordenes import *
 
-def validar_informacion(cedula):
-    cedula = input("Cúal es tu cédula: ")
+def validar_informacion(cedula = None):
+    if cedula == None:
+        cedula = input("Cúal es la cédula del paciente: ")
     validar_paciente = validar(cedula)
-    #print("validaaar: ", validar)
     if validar_paciente:
-        nombre = validar["nombre"]
-        print(f"Hola de nuevo {nombre}, deseas realizar un examen")
-        #print("flujo de crear una orden")
-        crear_orden()
+        nombre = validar_paciente["nombre"]
+        print(f"Hola {nombre}, deseas realizar un examen")
+        crear_orden(validar_paciente["ordenes"], validar_paciente["examenes"])
     else:
         print("El paciente no existe")
-        #print("Flujo para registrar un paciente")
         registrar_paciente(cedula)
+        print("Deseas registar una orden")
+        if input("Si o cualquiero otro caracter: ") == ("Si").lower():
+            validar_informacion(cedula)
+        else:
+            print("Salir de la creación de orden")
         
 def registrar_paciente(cedula):
     print("""
@@ -34,18 +37,44 @@ def registrar_paciente(cedula):
     telefono_contacto = input("Teléfono de contacto de emergencia: ")
     POS = input("Tipo de POS (Básico, PAC, Prepagado, Subsidiado): ")
     tipo_paciente = input("Tipo de paciente: ")
-    #paciente = Paciente("CC", "12345678", "Dana", "Cardona", "321222333", "6046791", "01-01-1999", "helloworld@gmail.com","miguel", "123", "pos si", "uwu")
-    paciente = Paciente(tipo_identificacion, cedula, nombre, apellido, celular, telefonos, fecha_nacimiento, correo, nombre_contacto, telefono_contacto, POS, tipo_paciente)
+    direccion = input("Direccion: ")
+    paciente = Paciente(tipo_identificacion, cedula, nombre, apellido, celular, telefonos, fecha_nacimiento, correo, nombre_contacto, telefono_contacto, POS, tipo_paciente, direccion)
     laboratorio.pacientes.append(paciente)
     print("Paciente agregado con éxito")
 
+def ver_todos_pacientes():
+    print("---" * 20)
+    for paciente in laboratorio.pacientes:
+        print(paciente.mostrar_informacion())
+        print("---" * 20)
+
+def ver_ordenes_paciente():
+    print("---" * 20)
+    existe = False
+    cedula_paciente = input("Cédula del paciente: ")
+
+    for paciente in laboratorio.pacientes:
+        if cedula_paciente == paciente.get_numero_identificacion():
+            existe = True
+            paciente
+            break  
+
+    if existe:
+        for orden in paciente.get_ordenes():
+                print("orden ", orden)
+    else:
+        print(f"El paciente con la cédula {cedula_paciente} no tiene órdenes.")
+
 
 def validar(id):
-    for x in laboratorio.pacientes:
-        if x.get_numero_identificacion() == id:
+    for i, dato in enumerate(laboratorio.pacientes):
+        print(dato)
+        if dato.get_numero_identificacion() == id:
             return {
                 "respuesta": True,
-                "nombre": x.get_nombre()
+                "nombre": dato.get_nombre(),
+                "ordenes": dato.get_ordenes(),
+                "examenes": dato.get_examenes()
             }
     return False
     
