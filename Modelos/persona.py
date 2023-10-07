@@ -1,7 +1,7 @@
 #Abstracción se aplica creando Persona  creación de una clase base o genérica que contiene atributos 
 # y métodos comunes que se comparten entre varias clases derivadas o subclases. 
 class Persona ():
-        def __init__(self,tipo_identificacion, numero_identificacion, nombre, apellido, celular, telefonos):
+        def __init__(self,tipo_identificacion, numero_identificacion, nombre, apellido, celular, telefonos, direccion):
         
                 self._tipo_identificacion = tipo_identificacion
                 self._numero_identificacion = numero_identificacion
@@ -9,6 +9,7 @@ class Persona ():
                 self._apellido = apellido
                 self._celular = celular
                 self._telefonos = telefonos
+                self.direccion = direccion
 
         # Gets   
 
@@ -30,7 +31,8 @@ class Persona ():
         def get_telefonos(self):
                 return self._telefonos
         
-
+        def get_direccion(self):
+                return self._direccion
         #Sets
 
         def set_tipo_identificacion(self, tipo_identificacion):
@@ -50,4 +52,10 @@ class Persona ():
 
         def set_telefonos(self, telefonos):
                 self._telefonos = telefonos
+        
+        def set_direccion(self, direccion):
+                self._direccion = direccion
 
+
+        # def validar_informacion():
+        #         print("No se puede validar la información de una persona genérica")

@@ -1,14 +1,15 @@
 from Modelos.paciente import Paciente
 from laboratorio import laboratorio
 from Metodos.medicos import *
+from Metodos.ordenes import *
 
-def validar_paciente():
+def validar_informacion(cedula):
     cedula = input("Cúal es tu cédula: ")
     validar_paciente = validar(cedula)
     #print("validaaar: ", validar)
     if validar_paciente:
         nombre = validar["nombre"]
-        print(f"Hola de nuevo {nombre}, deseasrealizar un examen")
+        print(f"Hola de nuevo {nombre}, deseas realizar un examen")
         #print("flujo de crear una orden")
         crear_orden()
     else:

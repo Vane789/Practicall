@@ -3,5 +3,6 @@ class Laboratorio():
         self.pacientes = []
         self.medicos = []
         self.ordenes = []
+        self.examenes = []
         
 laboratorio = Laboratorio()

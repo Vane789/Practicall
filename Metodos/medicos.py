@@ -3,7 +3,7 @@ from laboratorio import laboratorio
 from Metodos.medicos import *
 from Metodos.ordenes import *
 
-def validar_medico():
+def validar_informacion(cedula):
         cedula = input("Cúal es tu cédula: ")
         validar_medico = validar(cedula)
         if validar_medico:
@@ -26,11 +26,10 @@ def registrar_medico(cedula):
     celular = input("Número de celular: ")
     telefonos = input("Teléfonos separados por coma: ")
     especialidad = input("Especialidad: ")
-    direccion = input("Direccions: ")
+    direccion = input("Direccion: ")
     medico = Medico(tipo_identificacion, cedula, nombre, apellido, celular, telefonos, especialidad, direccion )
     laboratorio.medicos.append(medico)
     print("Medico agregado con éxito")
-
 
 
 def validar(id):
