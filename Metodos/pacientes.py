@@ -29,7 +29,6 @@ def registrar_paciente(cedula):
     telefono_contacto = input("Teléfono de contacto de emergencia: ")
     POS = input("Tipo de POS (Básico, PAC, Prepagado, Subsidiado): ")
     tipo_paciente = input("Tipo de paciente: ")
-    #paciente = Paciente("CC", "12345678", "Vane", "Cardona", "321222333", "6046791", "01-01-1999", "latoxica@gmail.com","miguel", "123", "pos si", "gay")
     paciente = Paciente(tipo_identificacion, cedula, nombre, apellido, celular, telefonos, fecha_nacimiento, correo, nombre_contacto, telefono_contacto, POS, tipo_paciente)
     laboratorio.pacientes.append(paciente)
     print("Paciente agregado con éxito")
